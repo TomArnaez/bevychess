@@ -102,11 +102,26 @@ fn create_pieces(
     let white_material = materials.add(Color::rgb(1., 0.8, 0.8).into());
     let black_material = materials.add(Color::rgb(0., 0.2, 0.2).into());
 
+    spawn_rook(
+        &mut commands,
+        white_material.clone(),
+        rook_handle.clone(),
+        Vec3::new(0., 0., 0.),
+    );
+
+    spawn_knight(
+        &mut commands,
+        black_material.clone(),
+        knight_1_handle.clone(),
+        knight_2_handle.clone(),
+        Vec3::new(0., 0., 1.),
+    );
+
     spawn_king(
-        commands,
+        &mut commands,
         white_material.clone(),
         king_handle.clone(),
         king_cross_handle.clone(),
         Vec3::new(0., 0., 4.)
-    )
+    );
 }
